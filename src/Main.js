@@ -32,7 +32,8 @@ class Main extends React.Component {
       isLoading: true,
     });
 
-    fetch('http://3.21.198.225/translate', {
+    //fetch('http://localhost:9999/translate', {
+    fetch('http://3.21.179.138/translate', {
       method: 'post',
       headers: {
         Accept: 'application/json',
@@ -53,9 +54,13 @@ class Main extends React.Component {
         return response.json();
       })
       .then((response) => {
-        console.log(response.output);
+        var outputResponse = String(response.output);
+        //outputResponse = outputResponse.replace(/ {1}?/g, '?');
+        //outputResponse = outputResponse.replace(/ ./g, '.');
+        //outputResponse = outputResponse.replace(/ {2}/g, ' ');
+        console.log(outputResponse);
         this.setState({
-          output: response.output,
+          output: outputResponse,
           isLoading: false,
         });
       });
