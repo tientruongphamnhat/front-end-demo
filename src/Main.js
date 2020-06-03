@@ -108,7 +108,7 @@ class Main extends React.Component {
                 value={this.state.output}
                 onChange={this.handlechange}
                 name="output"
-                readOnly="true"
+                readOnly={true}
                 style={{ minHeight: '100%', minWidth: '100%' }}
               ></TextareaAutosize>
             </div>
