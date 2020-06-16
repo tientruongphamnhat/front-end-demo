@@ -83,7 +83,7 @@ class Main extends React.Component {
           </p>
 
           <div className="row mt-4">
-            <div className="col text-center">
+            <div className="col-sm-6 text-center">
               <p style={{ fontSize: '28px' }}>Tiếng Anh</p>
               <div style={{ minHeight: '200px', height: 'auto' }}>
                 <TextareaAutosize
@@ -107,7 +107,7 @@ class Main extends React.Component {
                 ></TextareaAutosize>
               </div>
             </div>
-            <div className="col text-center">
+            <div className="col-sm-6 text-center">
               <p style={{ fontSize: '28px' }}>Tiếng Việt</p>
               <div style={{ minHeight: '200px' }}>
                 <TextareaAutosize
@@ -125,21 +125,22 @@ class Main extends React.Component {
               </div>
             </div>
           </div>
-
-          <div className="text-center mt-3">
-            {isLoading ? (
-              <Spinner animation="border" role="status">
-                <span className="sr-only">Loading...</span>
-              </Spinner>
-            ) : (
-              <button
-                onClick={this.handleTranslate}
-                className="btn btn-secondary"
-                style={{ width: '500px', background: '#006EFF' }}
-              >
-                Dịch
-              </button>
-            )}
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div className="center mt-3 col-sm-6">
+              {isLoading ? (
+                <Spinner animation="border" role="status">
+                  <span className="sr-only">Loading...</span>
+                </Spinner>
+              ) : (
+                <button
+                  onClick={this.handleTranslate}
+                  className="btn btn-secondary"
+                  style={{ width: '100%', background: '#006EFF' }}
+                >
+                  Dịch
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </>
