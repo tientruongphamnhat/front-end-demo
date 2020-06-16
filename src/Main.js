@@ -71,66 +71,61 @@ class Main extends React.Component {
     const { input, output, isLoading } = this.state;
     return (
       <>
-        <div className="col-xl-10 container">
-          <div>
-            <div className="text-center">
-              <p
-                style={{
-                  fontSize: '30px',
-                  marginTop: '15px',
-                  color: '#006EFF',
-                }}
-              >
-                Demo Mô Hình Dịch Máy Từ Tiếng Anh Sang Tiếng Việt
-              </p>
-            </div>
-          </div>
-          <div className="row mt-2 text-center">
-            <div className="col" style={{ fontSize: '28px' }}>
-              Tiếng Anh
-            </div>
-            <div className="col" style={{ fontSize: '28px' }}>
-              Tiếng Việt
-            </div>
-          </div>
-          <div className="row mt-2 text-center">
-            <div className="col" style={{ minHeight: '200px', height: 'auto' }}>
-              <TextareaAutosize
-                style={{
-                  minHeight: '100%',
-                  minWidth: '100%',
-                  height: 'auto',
-                  resize: 'vertical',
-                  fontSize: '20px',
-                  borderColor: '#D3D3D3',
-                  padding: '10px',
-                }}
-                name="input"
-                placeholder="Nhập nội dung"
-                autoCapitalize="off"
-                autoComplete="off"
-                autoCorrect="off"
-                spellCheck="false"
-                value={input}
-                onChange={this.handlechange}
-              ></TextareaAutosize>
-            </div>
+        <div className="container text-center">
+          <p
+            style={{
+              fontSize: '30px',
+              marginTop: '15px',
+              color: '#006EFF',
+            }}
+          >
+            Demo Mô Hình Dịch Máy Từ Tiếng Anh Sang Tiếng Việt
+          </p>
 
-            <div className="col" style={{ minHeight: '200px' }}>
-              <TextareaAutosize
-                value={output}
-                onChange={this.handlechange}
-                name="output"
-                readOnly={true}
-                style={{
-                  minHeight: '100%',
-                  minWidth: '100%',
-                  borderColor: '#D3D3D3',
-                  padding: '10px',
-                }}
-              ></TextareaAutosize>
+          <div className="row mt-4">
+            <div className="col text-center">
+              <p style={{ fontSize: '28px' }}>Tiếng Anh</p>
+              <div style={{ minHeight: '200px', height: 'auto' }}>
+                <TextareaAutosize
+                  style={{
+                    minHeight: '200px',
+                    minWidth: '100%',
+                    height: 'auto',
+                    resize: 'vertical',
+                    fontSize: '20px',
+                    borderColor: '#D3D3D3',
+                    padding: '10px',
+                  }}
+                  name="input"
+                  placeholder="Nhập nội dung"
+                  autoCapitalize="off"
+                  autoComplete="off"
+                  autoCorrect="off"
+                  spellCheck="false"
+                  value={input}
+                  onChange={this.handlechange}
+                ></TextareaAutosize>
+              </div>
+            </div>
+            <div className="col text-center">
+              <p style={{ fontSize: '28px' }}>Tiếng Việt</p>
+              <div style={{ minHeight: '200px' }}>
+                <TextareaAutosize
+                  value={output}
+                  onChange={this.handlechange}
+                  name="output"
+                  readOnly={true}
+                  style={{
+                    minHeight: '200px',
+                    minWidth: '100%',
+                    borderColor: '#D3D3D3',
+                    padding: '10px',
+                  }}
+                ></TextareaAutosize>
+              </div>
             </div>
           </div>
+
           <div className="text-center mt-3">
             {isLoading ? (
               <Spinner animation="border" role="status">
