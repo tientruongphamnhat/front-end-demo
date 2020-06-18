@@ -31,9 +31,9 @@ class Main extends React.Component {
     this.setState({
       isLoading: true,
     });
-
-    //fetch('http://localhost:9999/translate', {
-    fetch('http://3.21.179.138/translate', {
+    fetch(' http://34.87.171.107/translate', {
+      //fetch('http://localhost:9999/translate', {
+      //fetch('http://3.21.179.138/translate', {
       method: 'post',
       headers: {
         Accept: 'application/json',
