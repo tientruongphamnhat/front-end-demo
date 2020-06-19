@@ -31,6 +31,7 @@ class Main extends React.Component {
     this.setState({
       isLoading: true,
     });
+
     fetch(' http://34.87.171.107/translate', {
       //fetch('http://localhost:9999/translate', {
       //fetch('http://3.21.179.138/translate', {
@@ -38,7 +39,6 @@ class Main extends React.Component {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': 'http://localhost:3000',
       },
 
       body: JSON.stringify({
