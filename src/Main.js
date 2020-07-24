@@ -124,9 +124,11 @@ class Main extends React.Component {
               <div style={{ minHeight: '200px', height: 'auto' }}>
                 <TextareaAutosize
                   style={{
-                    minHeight: '200px',
+                    minHeight:
+                      this.state.inputHeight > this.state.outputHeight
+                        ? this.state.inputHeight
+                        : this.state.outputHeight,
                     minWidth: '100%',
-                    height: 'auto',
                     resize: 'vertical',
                     fontSize: '20px',
                     borderColor: '#D3D3D3',
@@ -153,11 +155,17 @@ class Main extends React.Component {
                   onChange={this.handlechange}
                   name="output"
                   readOnly={true}
+                  onHeightChange={this.onRowChangeOutputEvent}
                   style={{
-                    minHeight: '200px',
+                    minHeight:
+                      this.state.outputHeight > this.state.inputHeight
+                        ? this.state.outputHeight
+                        : this.state.inputHeight,
                     minWidth: '100%',
+                    fontSize: '20px',
                     borderColor: '#D3D3D3',
                     padding: '10px',
+                    color: this.state.outputColor,
                   }}
                 ></TextareaAutosize>
               </div>
