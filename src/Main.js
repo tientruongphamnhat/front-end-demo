@@ -58,7 +58,7 @@ class Main extends React.Component {
       isLoading: true,
     });
 
-    fetch('http://35.185.185.26/translate', {
+    fetch('http://34.87.103.230/translate', {
       //fetch('http://localhost:9999/translate', {
       //fetch('http://3.21.179.138/translate', {
       method: 'post',
@@ -115,7 +115,7 @@ class Main extends React.Component {
               color: '#006EFF',
             }}
           >
-            Demo Mô Hình Dịch Máy Từ Tiếng Anh Sang Tiếng Việt
+            Mô Hình Dịch Máy Từ Tiếng Anh Sang Tiếng Việt
           </p>
 
           <div className="row mt-4">
