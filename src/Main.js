@@ -107,19 +107,20 @@ class Main extends React.Component {
     const { input, output, isLoading } = this.state;
     return (
       <>
-        <div className="container text-center">
+        {/* <div className="container ">
           <p
             style={{
               fontSize: '30px',
               marginTop: '15px',
               color: '#006EFF',
+              textAlign: 'center',
             }}
           >
             Mô Hình Dịch Máy Từ Tiếng Anh Sang Tiếng Việt
           </p>
 
           <div className="row mt-4">
-            <div className="col-sm-6 text-center">
+            <div className="col text-center">
               <p style={{ fontSize: '28px' }}>Tiếng Anh</p>
               <div style={{ minHeight: '200px', height: 'auto' }}>
                 <TextareaAutosize
@@ -147,7 +148,33 @@ class Main extends React.Component {
                 ></TextareaAutosize>
               </div>
             </div>
-            <div className="col-sm-6 text-center">
+
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignSelf: 'center',
+              }}
+              className="col-sm-1"
+            >
+              <div>
+                {isLoading ? (
+                  <Spinner animation="border" role="status">
+                    <span className="sr-only">Loading...</span>
+                  </Spinner>
+                ) : (
+                  <button
+                    onClick={this.handleTranslate}
+                    className="btn btn-secondary"
+                    style={{ width: '100%', background: '#006EFF' }}
+                  >
+                    Dịch
+                  </button>
+                )}
+              </div>
+            </div>
+
+            <div className="col text-center">
               <p style={{ fontSize: '28px' }}>Tiếng Việt</p>
               <div style={{ minHeight: '200px' }}>
                 <TextareaAutosize
@@ -171,21 +198,122 @@ class Main extends React.Component {
               </div>
             </div>
           </div>
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <div className="center mt-3 col-sm-6">
-              {isLoading ? (
-                <Spinner animation="border" role="status">
-                  <span className="sr-only">Loading...</span>
-                </Spinner>
-              ) : (
-                <button
-                  onClick={this.handleTranslate}
-                  className="btn btn-secondary"
-                  style={{ width: '100%', background: '#006EFF' }}
+        </div> */}
+        <div className="text-center ">
+          <p
+            style={{
+              fontSize: '30px',
+              marginTop: '15px',
+              color: '#006EFF',
+              textAlign: 'center',
+            }}
+          >
+            Mô Hình Dịch Máy Từ Tiếng Anh Sang Tiếng Việt
+          </p>
+          <hr />
+          <div style={{ height: '500px' }}>
+            <div className="container">
+              <div
+                className="row"
+                style={{
+                  border: '1',
+                  borderColor: '#D3D3D3',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <p className="col mt-4" style={{ fontSize: '24px' }}>
+                  Tiếng Anh
+                </p>
+                <p className="col-1">&nbsp;</p>
+                <p className="col mt-4" style={{ fontSize: '24px' }}>
+                  Tiếng Việt
+                </p>
+              </div>
+              <div
+                className="row mt-1 mb-3"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <TextareaAutosize
+                  className="col-sm shadow-none rounded"
+                  style={{
+                    minHeight:
+                      this.state.inputHeight > this.state.outputHeight
+                        ? this.state.inputHeight
+                        : this.state.outputHeight,
+
+                    resize: 'vertical',
+                    fontSize: '20px',
+                    borderColor: '#D3D3D3',
+                    padding: '10px',
+                    overflow: 'hidden',
+                    outline: 0,
+                  }}
+                  name="input"
+                  placeholder="Nhập nội dung"
+                  autoCapitalize="off"
+                  autoComplete="off"
+                  autoCorrect="off"
+                  spellCheck="false"
+                  value={input}
+                  onChange={this.handlechange}
+                  onHeightChange={this.onRowChangeInputEvent}
+                ></TextareaAutosize>
+                {/* <div
+                className="col-sm-1"
+                style={{ alignSelf: 'center' }}
+              >
+                <i className="fas fa-arrow-right" ></i>
+              </div> */}
+                <div
+                  className="col-sm-1 my-2 "
+                  style={{
+                    alignSelf: 'center',
+                    height: '50px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
                 >
-                  Dịch
-                </button>
-              )}
+                  {isLoading ? (
+                    <Spinner animation="border" role="status">
+                      <span className="sr-only">Loading...</span>
+                    </Spinner>
+                  ) : (
+                    <button onClick={this.handleTranslate} className="btn">
+                      <i
+                        className="fas fa-arrow-right"
+                        style={{ fontSize: '40px' }}
+                      ></i>
+                    </button>
+                  )}
+                </div>
+                <TextareaAutosize
+                  className="col-sm shadow-none rounded"
+                  value={output}
+                  onChange={this.handlechange}
+                  name="output"
+                  readOnly={true}
+                  onHeightChange={this.onRowChangeOutputEvent}
+                  style={{
+                    minHeight:
+                      this.state.outputHeight > this.state.inputHeight
+                        ? this.state.outputHeight
+                        : this.state.inputHeight,
+
+                    fontSize: '20px',
+                    borderColor: '#D3D3D3',
+                    padding: '10px',
+                    color: this.state.outputColor,
+                    outline: 0,
+                  }}
+                ></TextareaAutosize>
+              </div>
             </div>
           </div>
         </div>
