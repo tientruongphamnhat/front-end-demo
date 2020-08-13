@@ -199,7 +199,7 @@ class Main extends React.Component {
             </div>
           </div>
         </div> */}
-        <div className="text-center ">
+        <div className="text-center">
           <p
             style={{
               fontSize: '30px',
@@ -214,20 +214,29 @@ class Main extends React.Component {
           <div style={{ height: '500px' }}>
             <div className="container">
               <div
-                className="row"
+                className="row d-flex justifyContent-center flex-nowrap"
                 style={{
                   border: '1',
                   borderColor: '#D3D3D3',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
                 }}
               >
-                <p className="col mt-4" style={{ fontSize: '24px' }}>
+                <p
+                  className="col "
+                  style={{
+                    fontSize: '24px',
+                    text_align: 'center',
+                  }}
+                >
                   Tiếng Anh
                 </p>
                 <p className="col-1">&nbsp;</p>
-                <p className="col mt-4" style={{ fontSize: '24px' }}>
+                <p
+                  className="col"
+                  style={{
+                    fontSize: '24px',
+                    text_align: 'center',
+                  }}
+                >
                   Tiếng Việt
                 </p>
               </div>
@@ -264,12 +273,6 @@ class Main extends React.Component {
                   onChange={this.handlechange}
                   onHeightChange={this.onRowChangeInputEvent}
                 ></TextareaAutosize>
-                {/* <div
-                className="col-sm-1"
-                style={{ alignSelf: 'center' }}
-              >
-                <i className="fas fa-arrow-right" ></i>
-              </div> */}
                 <div
                   className="col-sm-1 my-2 "
                   style={{
