@@ -314,6 +314,8 @@ class Main extends React.Component {
                     padding: '10px',
                     color: this.state.outputColor,
                     outline: 0,
+                    resize: 'vertical',
+                    overflow: 'hidden',
                   }}
                 ></TextareaAutosize>
               </div>
